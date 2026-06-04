@@ -1,0 +1,78 @@
+﻿<Page x:Class="trenimLast.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:trenimLast"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage" FontFamily="Arial">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Артикуль: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding artikul}" Name="ArticluTextBox"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Название продукта: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding nameProducts}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Единица измерения: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding capacity}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Цена: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding cost}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Поставщик: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding postav}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Производитель: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding proisvod}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Категория: " FontSize="14"/>
+            <ComboBox Name="catCombo" Width="150" FontSize="14">
+                <TextBlock></TextBlock>
+                <TextBlock>Детский музыкальный инструмент</TextBlock>
+                <TextBlock>Игровой набор</TextBlock>
+                <TextBlock>Конструктор</TextBlock>
+                <TextBlock>Машинка</TextBlock>
+            </ComboBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Скидка: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding descount}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Количество на складе: " FontSize="14"/>
+            <TextBox Width="200" Text="{Binding countInStorage}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Описание товара: " FontSize="14"/>
+            <TextBox Width="100" Text="{Binding opisav}"/>
+        </WrapPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" Grid.RowSpan="3">
+            <TextBlock Text="Изменить фото" FontSize="14"/>
+            <Image Source="{Binding imageCorrect}" Width="100" Height="100" Name="productImage"/>
+            <Button Content="Изменить фото" Name="editPhotoBtn" Click="editPhotoBtn_Click"/>
+        </StackPanel>
+        <Button Content="Сохранить" Grid.Column="0" Grid.Row="6" Name="saveBtn" Click="saveBtn_Click"/>
+    </Grid>
+</Page>
